@@ -1,0 +1,76 @@
+
+MODEL_FLAGS="--attention_resolutions 32,16,8 --class_cond False --diffusion_steps 500 --learn_sigma True --noise_schedule linear --num_channels 128 --num_heads 4 --num_res_blocks 2 --resblock_updown True --use_fp16 True --use_scale_shift_norm True"
+SAMPLE_FLAGS="--batch_size 50 --timestep_respacing 200"
+DATAPATH=/img_align_celeba
+MODELPATH=/models/ddpm-celeba.pt
+CLASSIFIERPATH=/models/classifier.pth
+ORACLEPATH=/models/oracle.pth
+OUTPUT_PATH=/output
+EXPNAME=exp/name
+
+# parameters of the sampling
+GPU=0
+S=60
+SEED=4
+USE_LOGITS=True
+CLASS_SCALES='8,10,15'
+LAYER=18
+PERC=30
+L1=0.05
+QUERYLABEL=31
+TARGETLABEL=-1
+IMAGESIZE=128  # dataset shape
+
+python -W ignore main.py \
+    --attention_resolutions 32,16,8 \
+    --class_cond False \
+    --diffusion_steps 500 \
+    --learn_sigma True \
+    --noise_schedule linear \
+    --num_channels 128 \
+    --num_heads 4 \
+    --num_res_blocks 2 \
+    --resblock_updown True \
+    --use_fp16 True \
+    --use_scale_shift_norm True \
+    --batch_size 192 \
+    --timestep_respacing 200  \
+    --dataset CelebA \
+    --exp_name exp/name \
+    --gpu 0 \
+    --seed 4 \
+    --l1_loss 0.05 \
+    --use_logits True \
+    --l_perc 30 \
+    --l_perc_layer 18 \
+    --save_x_t True \
+    --save_z_t True\
+    --use_sampling_on_x_t True \
+    --save_images True \
+    --image_size 128
+
+
+
+    python -W ignore new_main.py --attention_resolutions 32,16,8 --class_cond False --diffusion_steps 500 --learn_sigma True --noise_schedule linear --num_channels 128 --num_heads 4 --num_res_blocks 2 --resblock_updown True --use_fp16 True --use_scale_shift_norm True --batch_size 16 --timestep_respacing 200 --exp_name exp/name --use_logits True --image_size 128
+
+
+
+#celebA
+    6 attributs
+    args start_step=60,
+        timestep_respacing=180,
+        weight=torch.tensor([1,0.212,0.788,1,0.338,0.662]),
+        query_label=[20,24,30,31,23,21]
+
+    2 attributes
+     args start_step=40,
+        timestep_respacing=80,
+        weight=torch.tensor([1,1]),
+        query_label=[20,31]
+
+#celebAHQ
+    2 attributes
+     args start_step=40,
+        timestep_respacing=80,
+        weight=torch.tensor([1,1]),
+        query_label=[20,31]
