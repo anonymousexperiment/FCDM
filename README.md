@@ -12,7 +12,7 @@ Download Link:
 
 [Oracle](https://drive.google.com/file/d/1Ua9gK1BiUTG4wIkhpBpWyn6B-OCQKKMx/view)  
 
-
+# **Generation of counterfactual examples**
 python -W ignore main.py \
     --attention_resolutions 32,16,8 \
     --class_cond False \
@@ -40,3 +40,6 @@ python -W ignore main.py \
     --use_sampling_on_x_t True \
     --save_images True \
     --image_size 128
+
+# **Evaluation**
+We provide evaluation protocol scripts to evaluate the validity, similarity, diversity, accuracy, and fairness of our method. All our evaluation codes are in the Evaluation folder.
