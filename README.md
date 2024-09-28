@@ -2,7 +2,7 @@
 Please download and uncompress the CelebA dataset [here](https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html), and the CelebAHQ dataset [here](https://github.com/switchablenorms/CelebAMask-HQ).
 
 # **Downloading pre-trained models**
-To use our trained models, you must download them first. Please extract them to the folder models. Our code provides the diffusion model, the classifier under observation, and the trained oracle.  
+To use our trained models, you must download them first. Please extract them to the folder models. Our code provides the diffusion model, the classifier under observation.  
 
 Download Link:  
 
@@ -10,7 +10,6 @@ Download Link:
 
 [Diffusion Model](https://drive.google.com/file/d/17iB1aL4xctDukov-OIDuKqZdQ9YB1ZQz/view)  
 
-[Oracle](https://drive.google.com/file/d/1Ua9gK1BiUTG4wIkhpBpWyn6B-OCQKKMx/view)  
 
 # **Generation of counterfactual examples**
 python -W ignore main.py \
