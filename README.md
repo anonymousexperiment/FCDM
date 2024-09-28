@@ -1,3 +1,7 @@
+# **Data preparation**
+Please download and uncompress the CelebA dataset [here](https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html), and the CelebAHQ dataset [here](https://github.com/switchablenorms/CelebAMask-HQ).
+. 
+
 python -W ignore main.py \
     --attention_resolutions 32,16,8 \
     --class_cond False \
