@@ -1,6 +1,17 @@
 # **Data preparation**
 Please download and uncompress the CelebA dataset [here](https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html), and the CelebAHQ dataset [here](https://github.com/switchablenorms/CelebAMask-HQ).
-. 
+
+# **Downloading pre-trained models**
+To use our trained models, you must download them first. Please extract them to the folder models. Our code provides the diffusion model, the classifier under observation, and the trained oracle.  
+
+Download Link:  
+
+[Classifier](https://drive.google.com/file/d/1OqjWns4NSu6AiKkOnpUOjUHzA8sQlaOA/view)  
+
+[Diffusion Model](https://drive.google.com/file/d/17iB1aL4xctDukov-OIDuKqZdQ9YB1ZQz/view)  
+
+[Oracle](https://drive.google.com/file/d/1Ua9gK1BiUTG4wIkhpBpWyn6B-OCQKKMx/view)  
+
 
 python -W ignore main.py \
     --attention_resolutions 32,16,8 \
