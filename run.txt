@@ -55,22 +55,5 @@ python -W ignore main.py \
 
 
 
-#celebA
-    6 attributs
-    args start_step=60,
-        timestep_respacing=180,
-        weight=torch.tensor([1,0.212,0.788,1,0.338,0.662]),
-        query_label=[20,24,30,31,23,21]
 
-    2 attributes
-     args start_step=40,
-        timestep_respacing=80,
-        weight=torch.tensor([1,1]),
-        query_label=[20,31]
 
-#celebAHQ
-    2 attributes
-     args start_step=40,
-        timestep_respacing=80,
-        weight=torch.tensor([1,1]),
-        query_label=[20,31]
